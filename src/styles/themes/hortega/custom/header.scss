@@ -1,0 +1,76 @@
+.header {
+  color: $text-color-inverse;
+
+  .user-links {
+    margin-top: 10px;
+    line-height: 20px;
+  }
+
+  .header-utility {
+    align-items: center;
+
+    .company-only {
+      font-family: $font-family-regular;
+      font-size: 12px;
+      color: $color-inverse;
+    }
+  }
+
+  .mid-header {
+    .logo-wrapper {
+      .logo {
+        width: 178px;
+        height: 50px;
+      }
+    }
+
+    .middle-right-menu {
+      display: flex;
+      column-gap: 3px;
+      padding: 0;
+      margin: 0;
+
+      li {
+        align-self: center;
+        padding: 0;
+        font-size: 14px;
+        font-weight: 700;
+        color: $color-primary;
+        text-transform: capitalize;
+        list-style: none;
+
+        a {
+          &:hover {
+            color: $color-secondary;
+          }
+        }
+
+        .ng-fa-icon.header-icon {
+          padding-left: 10px;
+          font-size: 25px;
+          color: $color-primary;
+          text-align: center;
+
+          &:hover {
+            color: $color-secondary;
+          }
+        }
+      }
+
+      li > * {
+        padding: 0;
+        color: $color-primary;
+      }
+    }
+  }
+}
+
+.header {
+  .header-utility {
+    a > span {
+      @media (width >= 992px) {
+        display: inline;
+      }
+    }
+  }
+}

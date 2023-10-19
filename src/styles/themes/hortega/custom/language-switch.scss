@@ -1,0 +1,60 @@
+.language-switch.ng-star-inserted.dropdown {
+  margin-left: 0;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.language-switch:not(.accordion) .language-switch-button {
+  display: grid;
+  justify-items: center;
+  padding: 0 7.5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: $color-primary;
+  text-align: center;
+
+  &:hover {
+    color: $color-secondary;
+  }
+
+  .ng-fa-icon.header-icon {
+    font-size: 25px;
+    color: $color-primary;
+    text-align: center;
+  }
+
+  .language-switch-current-selection {
+    color: $color-primary;
+
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+}
+
+.sticky-header
+  header
+  .header
+  .header-utility
+  ish-language-switch
+  .language-switch:not(.accordion)
+  .language-switch-button {
+  text-align: center;
+
+  .ng-fa-icon.header-icon {
+    font-size: 17px;
+    text-align: center;
+  }
+
+  .language-switch-current-selection {
+    min-width: 18px;
+    font-size: 14px;
+    color: $text-color-quaternary;
+    text-transform: capitalize;
+  }
+}

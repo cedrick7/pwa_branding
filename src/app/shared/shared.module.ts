@@ -92,6 +92,7 @@ import { ModalDialogLinkComponent } from './components/common/modal-dialog-link/
 import { ModalDialogComponent } from './components/common/modal-dialog/modal-dialog.component';
 import { PagingComponent } from './components/common/paging/paging.component';
 import { SuccessMessageComponent } from './components/common/success-message/success-message.component';
+import { CustomProductBiocideComponent } from './components/custom/hortega/custom-product-biocide/custom-product-biocide.component';
 import { FilterCheckboxComponent } from './components/filter/filter-checkbox/filter-checkbox.component';
 import { FilterCollapsibleComponent } from './components/filter/filter-collapsible/filter-collapsible.component';
 import { FilterDropdownComponent } from './components/filter/filter-dropdown/filter-dropdown.component';
@@ -303,7 +304,7 @@ const exportedComponents = [
 
 @NgModule({
   imports: [...importExportModules],
-  declarations: [...declaredComponents, ...exportedComponents],
+  declarations: [...declaredComponents, ...exportedComponents, CustomProductBiocideComponent],
   exports: [...exportedComponents, ...importExportModules],
 })
 export class SharedModule {

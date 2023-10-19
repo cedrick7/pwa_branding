@@ -1,0 +1,98 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// header default
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ish-header {
+  ish-header-default {
+    .header-wrapper {
+      .mid-header {
+        .mid-header-wrapContent {
+          .mid-header-utility-wrapper {
+            .header-utility-wrapContent {
+              .header-utility-languageSwitch-wrapper {
+                ish-language-switch {
+                  .language-switch {
+                    margin-left: 0;
+                    font-family: $font-family-regular;
+                    color: $text-color-quaternary;
+
+                    button.language-switch-button {
+                      display: flex;
+                      flex-direction: column;
+                      align-content: center;
+                      text-align: center;
+
+                      fa-icon {
+                        padding: 0 5px;
+                        font-size: 25px;
+                        text-align: center;
+                      }
+
+                      span.language-switch-current-selection {
+                        padding: 0 8px;
+                        font-size: 14px;
+                        color: $text-color-quaternary;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+/// header sticky
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.sticky-header {
+  header {
+    ish-header {
+      ish-header-default {
+        .header-wrapper {
+          .mid-header {
+            .mid-header-wrapContent {
+              .mid-header-utility-wrapper {
+                .header-utility-wrapContent {
+                  .header-utility-languageSwitch-wrapper {
+                    ish-language-switch {
+                      .language-switch {
+                        button.language-switch-button {
+                          padding: 4px;
+
+                          fa-icon {
+                            padding: 0 10px;
+                            font-size: 17px;
+                            color: $color-primary;
+
+                            // for desktop
+                            @media (min-width: $screen-sm) {
+                              color: $text-color-quaternary;
+                            }
+                          }
+
+                          span.language-switch-current-selection {
+                            color: $color-primary;
+
+                            // for desktop
+                            @media (min-width: $screen-sm) {
+                              color: $text-color-quaternary;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

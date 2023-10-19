@@ -975,6 +975,7 @@
   "product.price.scaledPrice.single.text": "Buy {{0}} for {{1}} each",
   "product.price.scaledPrice.text": "Buy {{0}}-{{1}} for {{2}} each",
   "product.price.scaledPrice.text.last": "Buy {{0}}+ for {{1}} each",
+  "product.price.beforeInsert.text": "Price after Login",
   "product.print_page.link": "Print Page",
   "product.productBundle.products.heading": "This product bundle contains",
   "product.product_filters.heading": "Product Filters",

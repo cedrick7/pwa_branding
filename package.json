@@ -273,6 +273,6 @@
     "commitizen": {
       "path": "./node_modules/cz-customizable"
     },
-    "active-themes": "b2b,b2c"
+    "active-themes": "hortega"
   }
 }

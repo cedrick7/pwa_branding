@@ -1,0 +1,15 @@
+ish-cms-product-list-manual {
+  font-family: $font-family-regular;
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.1em;
+  }
+
+  ish-products-list {
+    .product-list {
+      padding: 20px;
+      background: #f4f4f4;
+    }
+  }
+}

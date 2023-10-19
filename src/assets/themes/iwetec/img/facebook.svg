@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="146.463mm"
+   height="146.27mm"
+   viewBox="0 0 146.463 146.27"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="iwetec_facebook.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.69664703"
+     inkscape:cx="-104.78764"
+     inkscape:cy="561.25984"
+     inkscape:window-width="2880"
+     inkscape:window-height="1526"
+     inkscape:window-x="2869"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g57"
+     height="200mm"
+     width="146.463mm" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g57"
+       transform="matrix(0.35277777,0,0,-0.35277777,173.49736,143.27899)">
+      <g
+         id="g57-5"
+         transform="translate(-78.590705,195.93852)">
+        <path
+           d="m 0,0 c 0,-101.297 -72.56,-185.642 -168.532,-203.916 -0.063,-0.01 -0.115,-0.021 -0.178,-0.031 v 156.569 h 44.61 l 5.787,48.238 h -50.397 v 44.117 c 0,3.082 0.608,6.07 1.803,8.89 1.143,2.726 2.799,5.169 4.896,7.276 2.097,2.097 4.54,3.743 7.266,4.896 2.82,1.195 5.808,1.793 8.901,1.793 h 27.531 v 39.693 c -7.349,0.901 -31.882,2.872 -52.662,2.872 -7.286,0 -14.248,-1.404 -20.695,-4.183 -6.175,-2.652 -11.679,-6.468 -16.366,-11.333 -4.634,-4.812 -8.261,-10.432 -10.788,-16.712 -2.579,-6.426 -3.89,-13.262 -3.89,-20.318 V 0.86 h -45.595 v -48.238 h 45.606 V -207.04 c -0.063,0 -0.136,0.011 -0.199,0.011 -107.494,7.842 -192.268,97.533 -192.268,207.029 0,114.643 92.941,207.585 207.585,207.585 C -92.942,207.585 0,114.643 0,0"
+           style="fill:#002850;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path59" />
+      </g>
+    </g>
+  </g>
+</svg>

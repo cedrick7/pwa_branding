@@ -16,6 +16,7 @@ export class ProductTileComponent implements OnInit {
 
   ngOnInit() {
     this.product$ = this.context.select('product');
+    console.error(this.product$);
   }
 
   configuration$(key: keyof ProductContextDisplayProperties) {

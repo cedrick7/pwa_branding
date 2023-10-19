@@ -1,0 +1,19 @@
+header .main-navigation header .main-navigation ish-sub-category-navigation .category-level1 {
+  @media (width <= 991.98px) {
+    .main-navigation-level1-item {
+      background-color: #fff;
+
+      a.dropdown-toggle {
+        background-color: #fff;
+
+        fa-icon {
+          color: $text-color-quaternary;
+
+          &:hover {
+            color: $color-primary;
+          }
+        }
+      }
+    }
+  }
+}

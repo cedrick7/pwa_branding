@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="146.463mm"
+   height="146.27mm"
+   viewBox="0 0 146.463 146.27"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="iwetec_linkedin.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.32"
+     inkscape:cx="1792.1875"
+     inkscape:cy="846.875"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g57"
+     height="200mm"
+     width="146.463mm" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g57"
+       transform="matrix(0.35277777,0,0,-0.35277777,173.49736,143.27899)">
+      <g
+         id="g227"
+         transform="translate(-163.2823,85.342676)">
+        <path
+           d="m 0,0 h -44.494 v 84.481 c 0,23.18 -9.499,35.95 -26.745,35.95 -12.005,0 -21.923,-7.339 -26.546,-19.658 -1.51,-3.743 -1.835,-8.995 -1.835,-12.738 V 0 h -45.742 v 152.03 h 0.682 l 44.295,0.063 h 0.692 v -19.186 l 3.606,4.11 c 6.06,6.919 19.616,18.515 42.262,18.515 15.841,0 29.103,-5.431 38.371,-15.695 C -5.2,128.472 0,111.834 0,90.362 Z m -197.353,176.783 c -13.031,0 -23.631,10.599 -23.631,23.62 0,13.032 10.6,23.632 23.631,23.632 13.022,0 23.621,-10.6 23.621,-23.632 0,-13.021 -10.599,-23.62 -23.621,-23.62 M -175.095,0 h -44.494 v 152.03 h 44.494 z m 55.168,308.075 c -114.644,0 -207.585,-92.941 -207.585,-207.585 0,-114.654 92.941,-207.585 207.585,-207.585 114.643,0 207.584,92.931 207.584,207.585 0,114.644 -92.941,207.585 -207.584,207.585"
+           style="fill:#002850;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path229" />
+      </g>
+    </g>
+  </g>
+</svg>

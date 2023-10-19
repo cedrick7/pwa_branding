@@ -31,7 +31,7 @@
     },
     "theme": {
       "type": "string",
-      "enum": ["b2b", "b2c", "all"],
+      "enum": ["hortega", "iwetec", "b2b", "b2c", "all"],
       "x-prompt": "For which theme?"
     },
     "ts": {

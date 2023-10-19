@@ -1,0 +1,12 @@
+.header {
+  .header-utility {
+    a > span {
+      display: none;
+    }
+  }
+
+  .header-utility > a > fa-icon,
+  .header-utility > button > fa-icon {
+    color: $color-primary;
+  }
+}

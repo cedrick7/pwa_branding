@@ -1,0 +1,15 @@
+.quickorder-link {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding: 0 7.5px;
+  color: $text-color-quaternary;
+
+  .ng-fa-icon.header-icon {
+    padding-left: 10px;
+    font-size: 25px;
+    color: $text-color-quaternary;
+    text-align: center;
+  }
+}

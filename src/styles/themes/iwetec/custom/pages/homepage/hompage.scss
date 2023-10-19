@@ -1,0 +1,15 @@
+.homepage.sticky-header .wrapper {
+  margin-top: 103px;
+
+  @media (min-width: $screen-sm) {
+    margin-top: 103px;
+  }
+}
+
+.homepage.sticky-header header {
+  box-shadow: none;
+
+  // @media (min-width: $screen-sm) {
+  //   margin-top: 103px;
+  // }
+}

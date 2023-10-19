@@ -1,0 +1,57 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// THEME SPECIFIC CONFIGURATION
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// fonts
+@import 'https://fonts.cdnfonts.com/css/cocosharp-trial';
+@import 'https://fonts.cdnfonts.com/css/helvetica-neue-5';
+
+// set theme specific variables
+@import 'variables';
+
+// import general main theme
+@import '../../main';
+
+body {
+  margin: 0;
+  font-family: $font-family-regular;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-color-primary;
+}
+
+// customizations
+// for header
+@import 'custom/header';
+@import 'custom/header-sticky';
+@import 'custom/search-box';
+@import 'custom/quick-order-link';
+@import 'custom/login-status';
+@import 'custom/mini-basket';
+@import 'custom/language-switch';
+@import 'custom/main-navigation';
+
+// for main content
+@import 'custom/cms-product-list-manual';
+@import 'custom/product-list';
+@import 'custom/product-item';
+@import 'custom/product-title';
+@import 'custom/product-image';
+@import 'custom/product-name';
+@import 'custom/product-price';
+@import 'custom/custom-product-biocide';
+
+// for registration / login
+@import 'custom/login-modal';
+
+// for footer
+@import 'custom/footer';
+
+footer > .ng-star-inserted,
+footer .footer {
+  padding-bottom: 0;
+  background-color: transparent;
+}

@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "ish",
+      "prefix": "custom",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -46,7 +46,7 @@
             "sourceMap": true,
             "allowedCommonJsDependencies": ["fast-sha256"]
           },
-          "defaultConfiguration": "b2b,production",
+          "defaultConfiguration": "hortega,production",
           "configurations": {
             "production": {
               "outputHashing": "all",
@@ -101,7 +101,9 @@
               ]
             },
             "b2b": {},
-            "b2c": {}
+            "b2c": {},
+            "iwetec": {},
+            "hortega": {}
           }
         },
         "serve": {
@@ -109,7 +111,7 @@
           "options": {
             "browserTarget": "intershop-pwa:build"
           },
-          "defaultConfiguration": "b2b,development",
+          "defaultConfiguration": "hortega,development",
           "configurations": {
             "production": {
               "browserTarget": "intershop-pwa:build:production"
@@ -122,6 +124,12 @@
             },
             "b2c": {
               "browserTarget": "intershop-pwa:build:b2c"
+            },
+            "iwetec": {
+              "browserTarget": "intershop-pwa:build:iwetec"
+            },
+            "hortega": {
+              "browserTarget": "intershop-pwa:build:hortega"
             }
           }
         },
@@ -153,12 +161,14 @@
             },
             "sourceMap": true
           },
-          "defaultConfiguration": "b2b,production",
+          "defaultConfiguration": "hortega,production",
           "configurations": {
             "production": {},
             "development": {},
             "b2b": {},
-            "b2c": {}
+            "b2c": {},
+            "iwetec": {},
+            "hortega": {}
           }
         },
         "serve-ssr": {
@@ -167,7 +177,7 @@
             "browserTarget": "intershop-pwa:build",
             "serverTarget": "intershop-pwa:server"
           },
-          "defaultConfiguration": "b2b",
+          "defaultConfiguration": "hortega",
           "configurations": {
             "b2b": {
               "browserTarget": "intershop-pwa:build:b2b,development",
@@ -176,6 +186,14 @@
             "b2c": {
               "browserTarget": "intershop-pwa:build:b2c,development",
               "serverTarget": "intershop-pwa:server:b2c,development"
+            },
+            "iwetec": {
+              "browserTarget": "intershop-pwa:build:iwetec,development",
+              "serverTarget": "intershop-pwa:server:iwetec,development"
+            },
+            "hortega": {
+              "browserTarget": "intershop-pwa:build:hortega,development",
+              "serverTarget": "intershop-pwa:server:hortega,development"
             }
           }
         }
@@ -188,7 +206,7 @@
       },
       "root": "projects/organization-management",
       "sourceRoot": "projects/organization-management/src",
-      "prefix": "ish",
+      "prefix": "custom",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
@@ -235,7 +253,7 @@
       },
       "root": "projects/requisition-management",
       "sourceRoot": "projects/requisition-management/src",
-      "prefix": "ish",
+      "prefix": "custom",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",

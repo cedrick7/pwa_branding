@@ -1,0 +1,183 @@
+<ng-template #searchBoxTemplate let-icon="icon">
+  <ish-lazy-search-box
+    data-testing-id="search-box-desktop"
+    [configuration]="{
+      placeholder: 'search.searchbox.instructional_text' | translate,
+      autoSuggest: true,
+      maxAutoSuggests: 10,
+      icon: icon,
+      showLastSearchTerm: true
+    }"
+  ></ish-lazy-search-box>
+</ng-template>
+
+<div class="header-wrapper container row">
+  <div class="top-header col-0 col-sm-12" *ngIf="!isSticky">
+    <div class="top-header-wrapContent row">
+      <div class="top-header-left col-6">
+        <ul class="top-header-left-links-list">
+          <!-- start user-links -->
+          <li class="top-header-left-link-wrapper">
+            <a class="top-header-left-link-item" rel="home" routerlink="/" href="/">Shop</a>
+          </li>
+          <li class="top-header-left-link-wrapper">
+            <a class="top-header-left-link-item" href="https://iwetec.de/" aria-current="page">Unternehmen</a>
+          </li>
+          <li class="top-header-left-link-wrapper">
+            <a class="top-header-left-link-item" href="https://karriere.iwetec.de">Karriere</a>
+          </li>
+          <!-- end user-links -->
+        </ul>
+      </div>
+      <div class="top-header-right col-6">
+        <!-- start company info -->
+        <p class="top-header-right-info">Willkommen bei IWETEC Deutschland | Nur für Gewerbetreibende</p>
+        <!-- end company info -->
+      </div>
+    </div>
+  </div>
+  <div class="mid-header col-12">
+    <div class="mid-header-wrapContent row">
+      <div class="mid-header-logo-wrapper col-4 col-sm col-md">
+        <!-- start logo -->
+        <a
+          *ngIf="showDesktopLogoLink"
+          rel="home"
+          routerLink="/home"
+          class="logo"
+          [attr.aria-label]="'common.home.link' | translate"
+          role="img"
+          data-testing-id="header-home-link-desktop"
+        ></a>
+        <a
+          *ngIf="showMobileLogoLink"
+          rel="home"
+          routerLink="/home"
+          class="mobile-logo"
+          [attr.aria-label]="'common.home.link' | translate"
+          role="img"
+          data-testing-id="header-home-link-mobile"
+        ></a>
+        <!-- end logo -->
+      </div>
+      <div class="mid-header-searchBar-wrapper col-0 col-sm-6" *ngIf="!isSticky && deviceType !== 'mobile'">
+        <!-- start search bar -->
+        <div class="mid-header-searchBar">
+          <div class="search-container header-search-container" id="header-search-container-top">
+            <ng-container *ngTemplateOutlet="searchBoxTemplate"></ng-container>
+          </div>
+        </div>
+        <!-- end search bar -->
+      </div>
+
+      <div id="top-navbar-wrapper" class="navbar-wrapper col-0 col-sm-12 col-md" *ngIf="isSticky">
+        <!-- start top main navigation -->
+        <div class="global-nav-container">
+          <nav
+            class="global-nav"
+            [ngbCollapse]="!showNavBar"
+            [attr.aria-label]="'navigation.main.aria_label' | translate"
+          >
+            <div class="main-navigation">
+              <ish-header-navigation></ish-header-navigation>
+              <ish-user-information-mobile></ish-user-information-mobile>
+            </div>
+          </nav>
+        </div>
+        <!-- end top main navigation -->
+      </div>
+
+      <div class="mid-header-utility-wrapper col-4 col-sm col-md">
+        <!-- start header utilities -->
+        <div class="header-utility-wrapContent">
+          <div class="header-utility-searchToggle-wrapper">
+            <a class="search-toggler" [ngClass]="{ 'active-search': showSearch }">
+              <fa-icon
+                *ngIf="isSticky"
+                class="header-icon"
+                [icon]="['fas', 'search']"
+                (click)="toggle('search')"
+              ></fa-icon>
+              <!-- <div
+                *ngIf="isSticky || showSearch"
+                class="search-container header-search-container"
+                [ngbCollapse]="!showSearch"
+                [ngClass]="{ show: !isSticky }"
+              >
+                <ng-container *ngTemplateOutlet="searchBoxTemplate; context: { icon: 'angle-right' }"></ng-container>
+              </div> -->
+            </a>
+          </div>
+          <div class="header-utility-login-wrapper">
+            <!-- start login -->
+            <ish-login-status data-testing-id="user-status-desktop"></ish-login-status>
+            <!-- end login -->
+          </div>
+          <div class="header-utility-miniBasket-wrapper">
+            <!-- start mini basket -->
+            <!-- mini basket for header default -->
+            <ish-mini-basket
+              data-testing-id="mini-basket-desktop"
+              view="full"
+              class="d-none"
+              [ngClass]="isSticky ? 'd-lg-none' : 'd-md-block'"
+            ></ish-mini-basket>
+            <!-- mini basket for sticky header -->
+            <ish-mini-basket
+              data-testing-id="mini-basket-mobile"
+              view="small"
+              [ngClass]="isSticky ? 'd-lg-block' : 'd-md-none'"
+            ></ish-mini-basket>
+            <!-- end mini basket -->
+          </div>
+          <div class="header-utility-languageSwitch-wrapper">
+            <!-- start language switch -->
+            <ish-language-switch data-testing-id="language-switch-desktop"> </ish-language-switch>
+            <!-- start language switch -->
+          </div>
+          <div class="header-utility-burgerToggle-wrapper">
+            <!-- start burger menu toggle -->
+            <button class="navbar-toggler" type="button" (click)="toggle('navbar')">
+              <span class="sr-only">{{ 'common.button.navbarCollapsed.text' | translate }}</span>
+              <div class="hamburger-menu" [ngClass]="{ open: showNavBar }">
+                <!--- strokes of the hamburger menu -->
+                <span></span> <span></span> <span></span>
+              </div>
+            </button>
+            <!-- end burger menu toggle -->
+          </div>
+        </div>
+        <!-- end header utilities -->
+      </div>
+    </div>
+  </div>
+  <div class="bottom-header col-12 col-sm-0">
+    <div class="bottom-header-wrapContent">
+      <div class="bottom-header-searchBar-wrapper">
+        <!-- start search bar -->
+        <div
+          *ngIf="isSticky || showSearch"
+          class="search-container header-search-container"
+          id="header-search-container-bottom"
+          [ngbCollapse]="!showSearch"
+          [ngClass]="{ show: !isSticky }"
+        >
+          <ng-container *ngTemplateOutlet="searchBoxTemplate; context: { icon: 'angle-right' }"></ng-container>
+        </div>
+        <!-- end search bar -->
+      </div>
+    </div>
+  </div>
+  <div id="bottom-navbar-wrapper" class="navbar-wrapper col-0 col-sm-12">
+    <!-- start bottom main navigation -->
+    <div class="global-nav-container">
+      <nav class="global-nav" [ngbCollapse]="!showNavBar" [attr.aria-label]="'navigation.main.aria_label' | translate">
+        <div class="main-navigation">
+          <ish-header-navigation></ish-header-navigation>
+          <ish-user-information-mobile></ish-user-information-mobile>
+        </div>
+      </nav>
+    </div>
+    <!-- end bottom main navigation -->
+  </div>
+</div>

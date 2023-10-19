@@ -1,0 +1,52 @@
+header .main-navigation {
+  font-family: $font-family-regular;
+  background: #f4f4f4;
+
+  .main-navigation-list {
+    .dropdown {
+      padding: 0 20px;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      .main-navigation-link {
+        font-family: $font-family-regular;
+        font-size: 0.875rem;
+        font-weight: bolder;
+        line-height: 40px;
+        color: $color-primary;
+
+        &:first-child {
+          padding-left: 10px;
+        }
+
+        .ng-fa-icon.header-icon {
+          padding: 0;
+          font-size: 0.875rem;
+          color: $color-primary;
+        }
+      }
+    }
+
+    .cms-menu {
+      display: grid;
+      grid-auto-flow: column;
+      grid-column-gap: 20px;
+      column-gap: 20px;
+      padding: 0;
+      margin: 0;
+      line-height: 40px;
+
+      li {
+        a {
+          font-family: $font-family-regular;
+          font-size: 0.875rem;
+          font-weight: bolder;
+          line-height: 40px;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

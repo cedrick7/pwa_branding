@@ -1,0 +1,55 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// THEME SPECIFIC CONFIGURATION
+//
+///////////////////////////////////////////////////////////////////////////////
+
+// fonts
+// @import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital@0;1&display=swap';
+@import 'https://fonts.cdnfonts.com/css/helvetica-neue-5';
+
+// set theme specific variables
+@import 'variables';
+
+// import general main theme
+@import '../../main';
+
+body {
+  margin: 0;
+  font-family: $font-family-regular;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $text-color-primary;
+}
+
+// for header
+@import 'custom/components/header/header';
+@import 'custom/components/header/search-box';
+@import 'custom/components/header/quick-order-link';
+@import 'custom/components/header/login-status';
+@import 'custom/components/header/mini-basket';
+@import 'custom/components/header/language-switch';
+@import 'custom/components/header/main-navigation';
+@import 'custom/components/header/sub-category-navigation';
+
+// for main content
+@import 'custom/components/content/cms-product-list-manual';
+@import 'custom/components/content/product-list';
+@import 'custom/components/content/product-item';
+@import 'custom/components/content/product-title';
+@import 'custom/components/content/product-image';
+@import 'custom/components/content/product-name';
+@import 'custom/components/content/product-price';
+
+// for footer
+@import 'custom/components/footer/footer';
+
+footer > .ng-star-inserted,
+footer .footer {
+  padding-bottom: 0;
+  background-color: transparent;
+}
+
+// pages
+@import 'custom/pages/homepage/hompage';
