@@ -200,7 +200,6 @@ ish-header {
                     flex-direction: row;
                     align-content: center;
                     justify-content: flex-start;
-                    width: 100%;
                   }
 
                   li.main-navigation-list-item {
@@ -247,6 +246,8 @@ ish-header {
 
                     ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
                       ul.category-level1.dropdown-menu {
+                        position: absolute;
+
                         li.main-navigation-level1-item {
                           a {
                           }
