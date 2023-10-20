@@ -25,15 +25,18 @@ ish-header {
                       padding: 0 7.5px;
                       color: $text-color-quaternary;
 
+                      &:hover,
+                      &:hover fa-icon,
+                      &:hover span {
+                        color: $color-primary;
+                      }
+
                       fa-icon {
                         font-size: 25px;
                         text-align: center;
                       }
 
                       span {
-                        &:hover {
-                          color: $color-primary;
-                        }
                       }
                     }
                   }
@@ -63,6 +66,10 @@ ish-header {
                   .header-utility-miniBasket-wrapper {
                     ish-mini-basket {
                       .item-count-container {
+                        &:hover span.badge.badge-pill {
+                          color: $color-special-primary;
+                        }
+
                         fa-icon {
                           font-size: 17px;
                           color: $color-primary;

@@ -209,15 +209,18 @@ ish-header {
                       padding: 0 20px;
 
                       &:nth-child(1) {
+                        min-width: 122px;
                         max-width: 122px;
                         padding-left: 10px;
                       }
 
                       &:nth-child(2) {
+                        min-width: 122px;
                         max-width: 122px;
                       }
 
                       &:nth-child(3) {
+                        min-width: 209px;
                         max-width: 209px;
                       }
                     }
@@ -229,6 +232,11 @@ ish-header {
                         font-size: 0.875rem;
                         font-weight: bold;
                         color: $text-color-quaternary;
+
+                        &:hover,
+                        &:hover fa-icon {
+                          color: $color-primary;
+                        }
                       }
 
                       fa-icon {
@@ -301,6 +309,10 @@ ish-header {
 
                                   &:first-child {
                                     padding-left: 10px;
+                                  }
+
+                                  &:hover {
+                                    color: $color-primary;
                                   }
                                 }
                               }
@@ -426,6 +438,40 @@ ish-header {
           #bottom-navbar-wrapper {
             @media (min-width: $screen-md) {
               display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sticky-header {
+  header {
+    ish-header {
+      ish-header-default {
+        #header-anchor {
+          position: relative;
+
+          #top-navbar-wrapper,
+          .global-nav-container,
+          .global-nav,
+          .main-navigation,
+          .ish-header-navigation,
+          .navbar-nav.main-navigation-list,
+          .dropdown.main-navigation-list-item,
+          ish-sub-category-navigation {
+            position: static;
+          }
+
+          #top-navbar-wrapper {
+            ul.category-level1.dropdown-menu {
+              position: absolute;
+              left: 0;
+              padding-right: 14px;
+              padding-left: 14px;
+              margin-right: auto;
+              margin-left: auto;
             }
           }
         }

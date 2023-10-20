@@ -20,8 +20,9 @@ ish-header {
                     font-family: $font-family-bold;
                     color: $text-color-quaternary;
 
-                    &:hover {
-                      color: $text-color-primary;
+                    &:hover,
+                    &:hover fa-icon {
+                      color: $color-primary;
                     }
 
                     fa-icon {
