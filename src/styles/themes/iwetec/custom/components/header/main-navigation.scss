@@ -90,52 +90,135 @@
 /// header default (mobile)
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// show/hide the navigation on toggling the burger menu button
 ish-header {
   ish-header-default {
     .header-wrapper {
+      #bottom-navbar-wrapper:not(.show) {
+        @media (max-width: $screen-sm) {
+          // closed nav
+          display: none;
+        }
+      }
+
+      #bottom-navbar-wrapper.show {
+        @media (max-width: $screen-sm) {
+          // opened nav
+          display: block;
+        }
+      }
+
       .navbar-wrapper {
         .global-nav-container {
           nav.global-nav.collapse:not(.show) {
-            // styling for closed nav
-            display: none;
+            @media (max-width: $screen-sm) {
+              // closed nav
+              display: none;
+            }
           }
 
           nav.global-nav.collapse.show {
-            // styling for opened nav
-            display: block;
+            @media (max-width: $screen-sm) {
+              // opened nav
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
+ish-header {
+  ish-header-default {
+    .header-wrapper {
+      #bottom-navbar-wrapper.navbar-wrapper.show {
+        .global-nav-container {
+          nav.global-nav.collapse.show {
             .main-navigation {
               ish-header-navigation {
                 ul.navbar-nav.main-navigation-list {
                   li.main-navigation-list-item {
                     a.main-navigation-link.main-navigation-list-item-link {
                       @media (max-width: $screen-sm) {
+                        padding: 0;
+                        font-size: 0.875rem;
+                        font-weight: bold;
+                        color: $text-color-inverse;
                         // height: 52px;
                         // line-height: 21px;
-                        // color: $text-color-inverse;
-                        // background-color: $color-primary;
+                        background-color: $color-primary;
+                        border: 1px solid #bebebe;
+                        border-top: none;
 
-                        // fa-icon {
-                        //   color: $text-color-inverse;
-                        // }
+                        &:hover,
+                        &:hover fa-icon {
+                          color: $text-color-quaternary;
+                        }
+
+                        fa-icon {
+                          color: $text-color-inverse;
+                          background-color: $color-primary;
+                        }
                       }
                     }
 
                     a.dropdown-toggle {
-                      fa-icon {
-                        // color: $text-color-inverse;
-                        // background-color: $color-primary;
+                      @media (max-width: $screen-sm) {
+                        color: $text-color-inverse;
+                        background-color: $color-primary;
+                        border: 1px solid #bebebe;
+                        border-top: none;
+                        border-left: none;
+
+                        &:hover,
+                        &:hover fa-icon {
+                          color: $text-color-quaternary;
+                        }
+
+                        fa-icon {
+                          color: $text-color-inverse;
+                          background-color: $color-primary;
+                        }
                       }
                     }
 
                     ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
                       ul.category-level1.dropdown-menu {
+                        @media (max-width: $screen-sm) {
+                          position: static;
+                        }
+
                         li.main-navigation-level1-item {
                           a {
+                            @media (max-width: $screen-sm) {
+                              font-size: 0.875rem;
+                              font-weight: bold;
+                              color: $text-color-quaternary;
+                              border-bottom: 1px solid #ccc;
+
+                              &:hover {
+                                color: $color-primary;
+                              }
+                            }
                           }
 
                           a.dropdown-toggle {
-                            fa-icon {
+                            @media (max-width: $screen-sm) {
+                              background-color: #fff;
+                              border: none;
+                              border-bottom: 1px solid #ccc;
+                              border-left: 1px solid #ccc;
+
+                              &:hover,
+                              &:hover fa-icon {
+                                color: $color-primary;
+                              }
+
+                              fa-icon {
+                                color: $text-color-quaternary;
+                                background-color: #fff;
+                              }
                             }
                           }
 
@@ -143,6 +226,9 @@ ish-header {
                             ul.category-level2 {
                               li.main-navigation-level2-item {
                                 a {
+                                  @media (max-width: $screen-sm) {
+                                    padding-left: 30px !important;
+                                  }
                                 }
                               }
                             }
@@ -159,8 +245,22 @@ ish-header {
                       ish-cms-freestyle {
                         div {
                           ul.cms-menu {
+                            @media (max-width: $screen-sm) {
+                              padding: 0;
+                            }
+
                             li {
                               a {
+                                @media (max-width: $screen-sm) {
+                                  padding: 0;
+                                  font-size: 0.875rem;
+                                  font-weight: bold;
+                                  color: $text-color-quaternary;
+
+                                  &:hover {
+                                    color: $color-primary;
+                                  }
+                                }
                               }
                             }
                           }
@@ -168,6 +268,12 @@ ish-header {
                       }
                     }
                   }
+                }
+              }
+
+              ish-user-information-mobile {
+                @media (max-width: $screen-sm) {
+                  display: none;
                 }
               }
             }

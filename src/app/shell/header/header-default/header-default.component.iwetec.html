@@ -137,7 +137,7 @@
           </div>
           <div class="header-utility-burgerToggle-wrapper">
             <!-- start burger menu toggle -->
-            <button class="navbar-toggler" type="button" (click)="toggle('navbar')">
+            <button class="navbar-toggler" type="button" (click)="toggle('navbar'); toggleBurger()">
               <span class="sr-only">{{ 'common.button.navbarCollapsed.text' | translate }}</span>
               <div class="hamburger-menu" [ngClass]="{ open: showNavBar }">
                 <!--- strokes of the hamburger menu -->
@@ -168,7 +168,7 @@
       </div>
     </div>
   </div>
-  <div id="bottom-navbar-wrapper" class="navbar-wrapper col-0 col-sm-12">
+  <div id="bottom-navbar-wrapper" class="navbar-wrapper col-0 col-sm-12" [ngClass]="showMobileNavbar ? 'show' : ''">
     <!-- start bottom main navigation -->
     <div class="global-nav-container">
       <nav class="global-nav" [ngbCollapse]="!showNavBar" [attr.aria-label]="'navigation.main.aria_label' | translate">

@@ -28,6 +28,18 @@ export class HeaderDefaultComponent implements OnChanges {
   @Input() deviceType: DeviceType;
   @Input() reset: unknown;
 
+  showMobileNavbar: boolean = false;
+  toggleBurger() {
+    // this.showMobileNavbar != this.showMobileNavbar;
+    if (this.showMobileNavbar) {
+      this.showMobileNavbar = false;
+    } else {
+      this.showMobileNavbar = true;
+    }
+
+    console.error('burger toggled: ' + this.showMobileNavbar);
+  }
+
   activeComponent: CollapsibleComponent = 'search';
 
   ngOnChanges(changes: SimpleChanges) {
