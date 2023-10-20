@@ -453,6 +453,9 @@ ish-header {
         #header-anchor {
           position: relative;
 
+          // making sure, every element between the anchor and the submenu
+          // is having the default position (static)
+          // because no element in between should be relative
           #top-navbar-wrapper,
           .global-nav-container,
           .global-nav,
@@ -465,6 +468,7 @@ ish-header {
           }
 
           #top-navbar-wrapper {
+            // set the position of the submenu absolute to the header-anchor
             ul.category-level1.dropdown-menu {
               position: absolute;
               left: 0;
