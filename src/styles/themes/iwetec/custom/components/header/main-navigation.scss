@@ -95,14 +95,14 @@ ish-header {
   ish-header-default {
     .header-wrapper {
       #bottom-navbar-wrapper:not(.show) {
-        @media (max-width: $screen-sm) {
+        @media (max-width: $screen-md) {
           // closed nav
           display: none;
         }
       }
 
       #bottom-navbar-wrapper.show {
-        @media (max-width: $screen-sm) {
+        @media (max-width: $screen-md) {
           // opened nav
           display: block;
         }
@@ -111,14 +111,14 @@ ish-header {
       .navbar-wrapper {
         .global-nav-container {
           nav.global-nav.collapse:not(.show) {
-            @media (max-width: $screen-sm) {
+            @media (max-width: $screen-md) {
               // closed nav
               display: none;
             }
           }
 
           nav.global-nav.collapse.show {
-            @media (max-width: $screen-sm) {
+            @media (max-width: $screen-md) {
               // opened nav
               display: block;
             }
@@ -140,7 +140,7 @@ ish-header {
                 ul.navbar-nav.main-navigation-list {
                   li.main-navigation-list-item {
                     a.main-navigation-link.main-navigation-list-item-link {
-                      @media (max-width: $screen-sm) {
+                      @media (max-width: $screen-md) {
                         padding: 0;
                         font-size: 0.875rem;
                         font-weight: bold;
@@ -164,7 +164,7 @@ ish-header {
                     }
 
                     a.dropdown-toggle {
-                      @media (max-width: $screen-sm) {
+                      @media (max-width: $screen-md) {
                         color: $text-color-inverse;
                         background-color: $color-primary;
                         border: 1px solid #bebebe;
@@ -185,13 +185,13 @@ ish-header {
 
                     ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
                       ul.category-level1.dropdown-menu {
-                        @media (max-width: $screen-sm) {
+                        @media (max-width: $screen-md) {
                           position: static;
                         }
 
                         li.main-navigation-level1-item {
                           a {
-                            @media (max-width: $screen-sm) {
+                            @media (max-width: $screen-md) {
                               font-size: 0.875rem;
                               font-weight: bold;
                               color: $text-color-quaternary;
@@ -204,7 +204,7 @@ ish-header {
                           }
 
                           a.dropdown-toggle {
-                            @media (max-width: $screen-sm) {
+                            @media (max-width: $screen-md) {
                               background-color: #fff;
                               border: none;
                               border-bottom: 1px solid #ccc;
@@ -226,7 +226,7 @@ ish-header {
                             ul.category-level2 {
                               li.main-navigation-level2-item {
                                 a {
-                                  @media (max-width: $screen-sm) {
+                                  @media (max-width: $screen-md) {
                                     padding-left: 30px !important;
                                   }
                                 }
@@ -245,13 +245,13 @@ ish-header {
                       ish-cms-freestyle {
                         div {
                           ul.cms-menu {
-                            @media (max-width: $screen-sm) {
+                            @media (max-width: $screen-md) {
                               padding: 0;
                             }
 
                             li {
                               a {
-                                @media (max-width: $screen-sm) {
+                                @media (max-width: $screen-md) {
                                   padding: 0;
                                   font-size: 0.875rem;
                                   font-weight: bold;
@@ -272,7 +272,7 @@ ish-header {
               }
 
               ish-user-information-mobile {
-                @media (max-width: $screen-sm) {
+                @media (max-width: $screen-md) {
                   display: none;
                 }
               }
@@ -291,6 +291,14 @@ ish-header {
 ish-header {
   ish-header-default {
     .header-wrapper {
+      // override toggle class .show for desktop header
+      #bottom-navbar-wrapper:not(.show) {
+        @media (min-width: $screen-sm) {
+          // closed nav
+          display: block;
+        }
+      }
+
       .navbar-wrapper {
         .global-nav-container {
           nav.global-nav.collapse {
@@ -361,6 +369,10 @@ ish-header {
                     ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
                       ul.category-level1.dropdown-menu {
                         position: absolute;
+
+                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                          width: 100%;
+                        }
 
                         li.main-navigation-level1-item {
                           a {
@@ -450,11 +462,37 @@ ish-header {
           .navbar-wrapper {
             .global-nav-container {
               nav.global-nav {
+                @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                  position: absolute;
+                }
+
                 .main-navigation {
                   ish-header-navigation {
                     ul.navbar-nav.main-navigation-list {
+                      @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+                        justify-content: center;
+                        padding: 0;
+                      }
+
                       li.main-navigation-list-item {
+                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                          display: flex;
+                          flex-direction: row;
+                          align-content: center;
+                          justify-content: center;
+                          min-width: 100% !important;
+                          max-width: 100%;
+                          padding: 0 !important;
+                        }
+
                         a.main-navigation-link.main-navigation-list-item-link {
+                          @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                            width: 100%;
+                          }
+
                           fa-icon {
                           }
                         }
@@ -495,7 +533,19 @@ ish-header {
                           ish-cms-freestyle {
                             div {
                               ul.cms-menu {
+                                @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                                  display: flex;
+                                  flex-direction: column;
+                                  align-content: center;
+                                  justify-content: center;
+                                  padding: 0;
+                                }
+
                                 li {
+                                  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                                    padding: 0;
+                                  }
+
                                   a {
                                   }
                                 }
@@ -506,12 +556,22 @@ ish-header {
                       }
                     }
                   }
+
+                  ish-user-information-mobile {
+                    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                      display: none;
+                    }
+                  }
                 }
               }
             }
           }
 
           #top-navbar-wrapper {
+            @media (min-width: $screen-sm) and (max-width: $screen-md) {
+              display: none;
+            }
+
             @media (min-width: $screen-md) {
               display: block;
             }
@@ -552,6 +612,7 @@ ish-header {
   }
 }
 
+// solving an issue with the positioning of the navbar
 .sticky-header {
   header {
     ish-header {
@@ -582,6 +643,33 @@ ish-header {
               padding-left: 14px;
               margin-right: auto;
               margin-left: auto;
+            }
+          }
+
+          // same for the bottom navigation
+          // #bottom-navbar-wrapper,
+          // .global-nav-container,
+          // .global-nav,
+          // .main-navigation,
+          // .ish-header-navigation,
+          // .navbar-nav.main-navigation-list,
+          // .dropdown.main-navigation-list-item,
+          // ish-sub-category-navigation {
+          //   @media (min-width: $screen-sm) and (max-width: $screen-md) {
+          //     position: static;
+          //   }
+          // }
+
+          #bottom-navbar-wrapper {
+            ul.category-level1.dropdown-menu {
+              @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                position: absolute;
+                left: 0;
+                padding-right: 14px;
+                padding-left: 14px;
+                margin-right: auto;
+                margin-left: auto;
+              }
             }
           }
         }
