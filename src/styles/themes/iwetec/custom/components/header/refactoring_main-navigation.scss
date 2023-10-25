@@ -1,94 +1,25 @@
-// header .main-navigation {
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// [INFO] using viewports:
+// [sm]: 768px
+// [md]: 992px
+// [lg]: 1200px
+// [xl]: 1400px
 
-//   .main-navigation-list {
-//     .dropdown {
-//       padding: 0 20px;
-
-//       @media (width <= 991.98px) {
-//         height: 52px;
-//       }
-
-//       &:first-child {
-//         padding-left: 0;
-//       }
-
-//       .main-navigation-link {
-//         font-size: 0.875rem;
-//         font-weight: bold;
-//         line-height: 40px;
-//         color: $text-color-quaternary;
-
-//         &:first-child {
-//           padding-left: 10px;
-//         }
-
-//         .ng-fa-icon.header-icon {
-//           padding: 0;
-//           font-size: 0.875rem;
-//         }
-
-//         @media (width <= 991.98px) {
-//           height: 52px;
-//           line-height: 21px;
-//           color: $text-color-inverse;
-//           background-color: $color-primary;
-
-//           .ng-fa-icon.header-icon {
-//             color: $text-color-inverse;
-//           }
-//         }
-//       }
-
-//       .dropdown-toggle {
-//         @media (width <= 991.98px) {
-//           color: $text-color-inverse;
-//           background-color: $color-primary;
-//         }
-//       }
-//     }
-
-//     .cms-menu {
-//       display: grid;
-//       grid-auto-flow: column;
-//       grid-column-gap: 20px;
-//       column-gap: 20px;
-//       padding: 0;
-//       margin: 0;
-//       line-height: 40px;
-
-//       li {
-//         a {
-//           font-size: 0.875rem;
-//           font-weight: bold;
-//           line-height: 40px;
-//           color: $text-color-quaternary;
-//         }
-
-//         @media (width <= 991.98px) {
-//           background-color: $text-color-inverse;
-//         }
-//       }
-
-//       @media (width <= 991.98px) {
-//         display: flex;
-//         flex-direction: column;
-//         height: 52px;
-//         line-height: 21px;
-//         background-color: $text-color-inverse;
-//       }
-//     }
-//   }
-
-//   ish-user-information-mobile {
-//     @media (width <= 991.98px) {
-//       display: none;
-//     }
-//   }
-// }
+//////////////////////////////////////////////////
+// [INFO] header styling separation:
+// [1] header mobile (0 - md)
+// [2] header desktop (md - lg)
+// [3] header desktop (lg - ...)
+// [NOTICE] header styling order because of overriding: [1], [3], [2]
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// header default (mobile)
-////////////////////////////////////////////////////////////////////////////////////////////////////
+// [1] header mobile
+// viewport:      0px - 992px
+// default:       navbar hidden, show navbar by clicking burger menu
+// header-sticky: same as default
+
+//////////////////////////////////////////////////
+// styling default
 
 // show/hide the navigation on toggling the burger menu button
 ish-header {
@@ -284,9 +215,160 @@ ish-header {
   }
 }
 
+//////////////////////////////////////////////////
+// styling header-sticky
+.sticky-header {
+  header {
+    ish-header {
+      ish-header-default {
+        .header-wrapper {
+          .navbar-wrapper {
+            .global-nav-container {
+              nav.global-nav {
+                @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                  position: absolute;
+                }
+
+                .main-navigation {
+                  ish-header-navigation {
+                    ul.navbar-nav.main-navigation-list {
+                      @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                        display: flex;
+                        flex-direction: column;
+                        align-content: center;
+                        justify-content: center;
+                        padding: 0;
+                      }
+
+                      li.main-navigation-list-item {
+                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                          display: flex;
+                          flex-direction: row;
+                          align-content: center;
+                          justify-content: center;
+                          min-width: 100% !important;
+                          max-width: 100%;
+                          padding: 0 !important;
+                        }
+
+                        a.main-navigation-link.main-navigation-list-item-link {
+                          @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                            width: 100%;
+                          }
+
+                          fa-icon {
+                          }
+                        }
+
+                        a.dropdown-toggle {
+                          fa-icon {
+                          }
+                        }
+
+                        ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
+                          ul.category-level1.dropdown-menu {
+                            li.main-navigation-level1-item {
+                              a {
+                              }
+
+                              a.dropdown-toggle {
+                                fa-icon {
+                                }
+                              }
+
+                              ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
+                                ul.category-level2 {
+                                  li.main-navigation-level2-item {
+                                    a {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    ish-lazy-content-include {
+                      ish-content-include {
+                        ish-content-pagelet {
+                          ish-cms-freestyle {
+                            div {
+                              ul.cms-menu {
+                                @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                                  display: flex;
+                                  flex-direction: column;
+                                  align-content: center;
+                                  justify-content: center;
+                                  padding: 0;
+                                }
+
+                                li {
+                                  @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                                    padding: 0;
+                                  }
+
+                                  a {
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  ish-user-information-mobile {
+                    @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          #top-navbar-wrapper {
+            @media (min-width: $screen-sm) and (max-width: $screen-md) {
+              display: none;
+            }
+
+            .global-nav-container {
+              nav.global-nav.collapse {
+                .main-navigation {
+                  ish-header-navigation {
+                    ul.navbar-nav.main-navigation-list {
+                      li.main-navigation-list-item {
+                        &:nth-child(2) {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          #bottom-navbar-wrapper {
+          }
+        }
+      }
+    }
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-/// header default (desktop)
-////////////////////////////////////////////////////////////////////////////////////////////////////
+// [3] header desktop
+// viewport:      1200px - ...
+// default:       show navbar (#top-navbar-wrapper)
+// header-sticky: show navbar (#bottom-navbar-wrapper)
+
+//////////////////////////////////////////////////
+// styling default
 
 ish-header {
   ish-header-default {
@@ -370,23 +452,8 @@ ish-header {
                       ul.category-level1.dropdown-menu {
                         position: absolute;
 
-                        @media (min-width: $screen-sm) {
-                          display: grid;
-                          grid-template-columns: 1fr 1fr 1fr;
-                        }
-
-                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                          width: 100%;
-                        }
-
                         li.main-navigation-level1-item {
                           a {
-                            font-family: $font-family-bold;
-                            color: $text-color-quaternary;
-
-                            &:hover {
-                              color: $color-primary;
-                            }
                           }
 
                           a.dropdown-toggle {
@@ -395,14 +462,9 @@ ish-header {
                           }
 
                           ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
-                            @media (min-width: $screen-sm) {
-                              display: none;
-                            }
-
                             ul.category-level2 {
                               li.main-navigation-level2-item {
                                 a {
-                                  font-family: $font-family-regular;
                                 }
                               }
                             }
@@ -466,9 +528,8 @@ ish-header {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/// header sticky
-////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////
+// styling header-sticky
 
 .sticky-header {
   header {
@@ -478,37 +539,11 @@ ish-header {
           .navbar-wrapper {
             .global-nav-container {
               nav.global-nav {
-                @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                  position: absolute;
-                }
-
                 .main-navigation {
                   ish-header-navigation {
                     ul.navbar-nav.main-navigation-list {
-                      @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                        display: flex;
-                        flex-direction: column;
-                        align-content: center;
-                        justify-content: center;
-                        padding: 0;
-                      }
-
                       li.main-navigation-list-item {
-                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                          display: flex;
-                          flex-direction: row;
-                          align-content: center;
-                          justify-content: center;
-                          min-width: 100% !important;
-                          max-width: 100%;
-                          padding: 0 !important;
-                        }
-
                         a.main-navigation-link.main-navigation-list-item-link {
-                          @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                            width: 100%;
-                          }
-
                           fa-icon {
                           }
                         }
@@ -520,10 +555,6 @@ ish-header {
 
                         ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
                           ul.category-level1.dropdown-menu {
-                            @media (min-width: $screen-sm) {
-                              display: block;
-                            }
-
                             li.main-navigation-level1-item {
                               a {
                               }
@@ -534,10 +565,6 @@ ish-header {
                               }
 
                               ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
-                                @media (min-width: $screen-sm) {
-                                  display: block;
-                                }
-
                                 ul.category-level2 {
                                   li.main-navigation-level2-item {
                                     a {
@@ -557,19 +584,7 @@ ish-header {
                           ish-cms-freestyle {
                             div {
                               ul.cms-menu {
-                                @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                                  display: flex;
-                                  flex-direction: column;
-                                  align-content: center;
-                                  justify-content: center;
-                                  padding: 0;
-                                }
-
                                 li {
-                                  @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                                    padding: 0;
-                                  }
-
                                   a {
                                   }
                                 }
@@ -582,9 +597,6 @@ ish-header {
                   }
 
                   ish-user-information-mobile {
-                    @media (min-width: $screen-sm) and (max-width: $screen-md) {
-                      display: none;
-                    }
                   }
                 }
               }
@@ -592,16 +604,8 @@ ish-header {
           }
 
           #top-navbar-wrapper {
-            @media (min-width: $screen-sm) and (max-width: $screen-md) {
-              display: none;
-            }
-
             @media (min-width: $screen-md) {
               display: block;
-            }
-
-            @media (min-width: $screen-md) and (max-width: $screen-lg) {
-              margin-left: 30px;
             }
 
             .global-nav-container {
@@ -614,45 +618,6 @@ ish-header {
                           a {
                             @media (min-width: $screen-md) {
                               min-width: 82px;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-
-            .global-nav-container {
-              nav.global-nav {
-                .main-navigation {
-                  ish-header-navigation {
-                    ul.navbar-nav.main-navigation-list {
-                      li.main-navigation-list-item {
-                        a.main-navigation-link.main-navigation-list-item-link {
-                        }
-
-                        ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
-                          ul.category-level1.dropdown-menu {
-                            @media (min-width: $screen-md) {
-                              display: grid;
-                              grid-template-columns: 1fr 1fr 1fr;
-                            }
-
-                            li.main-navigation-level1-item {
-                              ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
-                                ul.category-level2 {
-                                  @media (min-width: $screen-md) {
-                                    display: none;
-                                  }
-
-                                  li.main-navigation-level2-item {
-                                    a {
-                                    }
-                                  }
-                                }
-                              }
                             }
                           }
                         }
@@ -675,7 +640,6 @@ ish-header {
   }
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
 // solving an issue with the positioning of the navbar
 .sticky-header {
   header {
@@ -709,8 +673,222 @@ ish-header {
               margin-left: auto;
             }
           }
+        }
+      }
+    }
+  }
+}
 
-          // same for the bottom navigation
+////////////////////////////////////////////////////////////////////////////////////////////////////
+// [2] header desktop
+// viewport:      992px - 1200px
+// default:       show navbar (#bottom-navbar-wrapper)
+// header-sticky: navbar hidden, show navbar by clicking burger menu
+
+//////////////////////////////////////////////////
+// styling default
+
+ish-header {
+  ish-header-default {
+    .header-wrapper {
+      // override toggle class .show for desktop header
+      #bottom-navbar-wrapper:not(.show) {
+      }
+
+      .navbar-wrapper {
+        .global-nav-container {
+          nav.global-nav.collapse {
+            .main-navigation {
+              ish-header-navigation {
+                ul.navbar-nav.main-navigation-list {
+                  li.main-navigation-list-item {
+                    a.main-navigation-link.main-navigation-list-item-link {
+                      fa-icon {
+                      }
+                    }
+
+                    a.dropdown-toggle {
+                      fa-icon {
+                      }
+                    }
+
+                    ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
+                      ul.category-level1.dropdown-menu {
+                        position: absolute;
+
+                        @media (min-width: $screen-sm) and (max-width: $screen-md) {
+                          width: 100%;
+                        }
+
+                        li.main-navigation-level1-item {
+                          a {
+                          }
+
+                          a.dropdown-toggle {
+                            fa-icon {
+                            }
+                          }
+
+                          ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
+                            ul.category-level2 {
+                              li.main-navigation-level2-item {
+                                a {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+
+                ish-lazy-content-include {
+                  ish-content-include {
+                    ish-content-pagelet {
+                      ish-cms-freestyle {
+                        div {
+                          ul.cms-menu {
+                            li {
+                              a {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//////////////////////////////////////////////////
+// styling header-sticky
+
+.sticky-header {
+  header {
+    ish-header {
+      ish-header-default {
+        .header-wrapper {
+          .navbar-wrapper {
+            .global-nav-container {
+              nav.global-nav {
+                .main-navigation {
+                  ish-header-navigation {
+                    ul.navbar-nav.main-navigation-list {
+                      li.main-navigation-list-item {
+                        a.main-navigation-link.main-navigation-list-item-link {
+                          fa-icon {
+                          }
+                        }
+
+                        a.dropdown-toggle {
+                          fa-icon {
+                          }
+                        }
+
+                        ish-sub-category-navigation[ng-reflect-sub-categories-depth='1'] {
+                          ul.category-level1.dropdown-menu {
+                            li.main-navigation-level1-item {
+                              a {
+                              }
+
+                              a.dropdown-toggle {
+                                fa-icon {
+                                }
+                              }
+
+                              ish-sub-category-navigation[ng-reflect-sub-categories-depth='2'] {
+                                ul.category-level2 {
+                                  li.main-navigation-level2-item {
+                                    a {
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+
+                    ish-lazy-content-include {
+                      ish-content-include {
+                        ish-content-pagelet {
+                          ish-cms-freestyle {
+                            div {
+                              ul.cms-menu {
+                                li {
+                                  a {
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  ish-user-information-mobile {
+                  }
+                }
+              }
+            }
+          }
+
+          #top-navbar-wrapper {
+            @media (min-width: $screen-md) {
+              display: block;
+            }
+
+            @media (min-width: $screen-md) and (max-width: $screen-lg) {
+              margin-left: 30px;
+            }
+
+            .global-nav-container {
+              nav.global-nav.collapse {
+                .main-navigation {
+                  ish-header-navigation {
+                    ul.navbar-nav.main-navigation-list {
+                      li.main-navigation-list-item {
+                        &:nth-child(2) {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          #bottom-navbar-wrapper {
+          }
+        }
+      }
+    }
+  }
+}
+
+// solving an issue with the positioning of the navbar
+.sticky-header {
+  header {
+    ish-header {
+      ish-header-default {
+        #header-anchor {
+          position: relative;
+
+          // making sure, every element between the anchor and the submenu
+          // is having the default position (static)
+          // because no element in between should be relative
           // #bottom-navbar-wrapper,
           // .global-nav-container,
           // .global-nav,
@@ -733,177 +911,6 @@ ish-header {
                 padding-left: 14px;
                 margin-right: auto;
                 margin-left: auto;
-              }
-
-              @media (width >= 992px) and (width < 1200px) {
-                position: absolute;
-                left: 0;
-                padding-right: 0;
-                padding-left: 0;
-                margin-right: auto;
-                margin-left: auto;
-              }
-            }
-
-            // why doesn't this work?
-            // .global-nav-container {
-            //   nav.global-nav {
-            //     .main-navigation {
-            //       ish-header-navigation {
-            //         ul.navbar-nav.main-navigation-list {
-            //           li.dropdown.main-navigation-list-item {
-            //             @media (min-width: $screen-md) and (max-width: $screen-lg) {
-            //               position: relative !important;
-            //             }
-
-            //             a.main-navigation-link.main-navigation-list-item-link:first-child {
-            //               @media (min-width: $screen-md) and (max-width: $screen-lg) {
-            //                 position: static !important;
-            //               }
-            //             }
-            //           }
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
-          }
-        }
-      }
-    }
-  }
-}
-
-// fixing collateral damage from styling the header between 992px and 1199.98px
-.sticky-header header ish-header ish-header-default #header-anchor .dropdown.main-navigation-list-item {
-  // @media (min-width: $screen-md) and (max-width: $screen-lg) {
-  @media (width < 1200px) {
-    position: relative;
-  }
-}
-
-.sticky-header .main-navigation .main-navigation-list > li.dropdown > a:first-child {
-  // @media (min-width: $screen-md) and (max-width: $screen-lg) {
-  @media (width < 1200px) {
-    position: static;
-  }
-}
-
-.sticky-header .global-nav-container .main-navigation-list li.open .category-level2 {
-  @media (width < 1200px) {
-    padding-right: 14px;
-    padding-left: 14px;
-  }
-}
-
-.sticky-header
-  ish-header
-  ish-header-default
-  .header-wrapper
-  #bottom-navbar-wrapper.navbar-wrapper.show
-  .global-nav-container
-  nav.global-nav.collapse.show
-  .main-navigation
-  ish-header-navigation
-  ul.navbar-nav.main-navigation-list
-  li.main-navigation-list-item
-  ish-sub-category-navigation[ng-reflect-sub-categories-depth='1']
-  ul.category-level1.dropdown-menu
-  li.main-navigation-level1-item
-  ish-sub-category-navigation[ng-reflect-sub-categories-depth='2']
-  ul.category-level2
-  li.main-navigation-level2-item
-  a {
-  padding-left: 15px !important;
-}
-
-.sticky-header
-  header
-  ish-header
-  ish-header-default
-  #header-anchor
-  #top-navbar-wrapper
-  ul.category-level1.dropdown-menu {
-  @media (width > 1200px) {
-    top: 50.25px;
-  }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-// override hover effect class
-.homepage:not(.sticky-header) {
-  header {
-    ish-header {
-      ish-header-default {
-        .header-wrapper {
-          #bottom-navbar-wrapper {
-            .global-nav-container {
-              nav.global-nav {
-                .main-navigation {
-                  ish-header-navigation {
-                    ul.navbar-nav.main-navigation-list {
-                      li.main-navigation-list-item.dropdown:nth-child(odd) {
-                        // only for first and third (Produkte + Branchenkatalog)
-                        &.hover,
-                        &:hover {
-                          > a:first-child {
-                            &::before {
-                              // set to visible with a delay the same way as the sub categories main layer
-                              visibility: visible;
-                              transition-delay: 0.5s;
-                            }
-                          }
-
-                          ul {
-                            visibility: visible;
-                            transition-delay: 0.5s;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.homepage.sticky-header {
-  header {
-    ish-header {
-      ish-header-default {
-        .header-wrapper {
-          #top-navbar-wrapper {
-            .global-nav-container {
-              nav.global-nav {
-                .main-navigation {
-                  ish-header-navigation {
-                    ul.navbar-nav.main-navigation-list {
-                      li.main-navigation-list-item.dropdown:nth-child(odd) {
-                        // only for first and third (Produkte + Branchenkatalog)
-                        &.hover,
-                        &:hover {
-                          > a:first-child {
-                            &::before {
-                              // set to visible with a delay the same way as the sub categories main layer
-                              visibility: visible;
-                              transition-delay: 0.5s;
-                            }
-                          }
-
-                          ul {
-                            visibility: visible;
-                            transition-delay: 0.5s;
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
               }
             }
           }

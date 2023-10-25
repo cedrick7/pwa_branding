@@ -1,0 +1,25 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-primary;
+}
+
+a,
+a:not([href]):not([tabindex]) {
+  color: red;
+}
+
+a:not([href]):not([tabindex]) {
+  &:hover {
+    color: red;
+  }
+}
+
+a {
+  h3:hover {
+    color: red;
+  }
+}

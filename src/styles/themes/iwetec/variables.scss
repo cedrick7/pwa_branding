@@ -34,11 +34,12 @@ $font-size-corporate: 0.875rem; // 14px is the bootstrap 3 default font size (1r
 //
 //CORPORATE DESIGN COLORS
 
-$CORPORATE-PRIMARY: #688dc3; // BLUE
+// $CORPORATE-PRIMARY: #688dc3; // BLUE
+$CORPORATE-PRIMARY: #002850; // BLUE
 $CORPORATE-SECONDARY: darken($CORPORATE-PRIMARY, 10%);
 $CORPORATE-LIGHT: lighten($CORPORATE-PRIMARY, 10%);
 $CORPORATE-DARK: darken($CORPORATE-PRIMARY, 20%);
-$CORPORATE-SHADOW: #7f9ecc80; // with alpha transparency
+$CORPORATE-SHADOW: #d4d4d4;
 
 //
 //TEXT COLORS
@@ -97,9 +98,9 @@ $button-primary-border: $CORPORATE-SECONDARY;
 $button-focus-box-shadow: $CORPORATE-SHADOW;
 
 // default buttons
-$button-default-color: $CORPORATE-PRIMARY;
-$button-default-bg: #fff;
-$button-default-border: $CORPORATE-PRIMARY;
+$button-default-color: $color-special-primary;
+$button-default-bg: rgba(212, 212, 212, 0.7);
+$button-default-border: rgba(212, 212, 212, 0.7);
 
 // datepicker
 $datepicker-border-radius: 15px;

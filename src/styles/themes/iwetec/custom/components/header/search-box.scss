@@ -1,14 +1,51 @@
-.search {
-  input.searchTerm,
-  input.form-control {
-    color: #bbb;
-    background-color: #fff;
-    border: 2px solid #e2e2e2;
+ish-search-box {
+  .search {
+    input.searchTerm,
+    input.form-control {
+      color: #bbb;
+      background-color: #fff;
+      border: 2px solid #e2e2e2;
+    }
+
+    input.form-control.searchTerm {
+      &:focus {
+        color: $color-primary;
+      }
+
+      &:hover .form-control {
+        color: red;
+        background-color: red;
+      }
+    }
+
+    // hide the standard reset button (webkit based browsers)
+    input[type='search']::-webkit-search-cancel-button,
+    input[type='search']::-webkit-search-decoration,
+    input[type='search']::-webkit-search-results-button,
+    input[type='search']::-webkit-search-results-decoration {
+      display: none;
+    }
+
+    // hide the standard reset button (internet explorer)
+    input[type='search']::-ms-clear {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+
+    input[type='search']::-ms-reveal {
+      display: none;
+      width: 0;
+      height: 0;
+    }
   }
 
   .buttons {
-    button.btn-search {
-      color: $text-color-primary;
+    button.btn.btn-reset,
+    button.btn.btn-search {
+      fa-icon {
+        color: $color-primary !important;
+      }
     }
   }
 }

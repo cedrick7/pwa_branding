@@ -1,0 +1,1 @@
+a,a:not([href]):not([tabindex]){color:red}a:not([href]):not([tabindex]):hover{color:red}a h3:hover{color:red}

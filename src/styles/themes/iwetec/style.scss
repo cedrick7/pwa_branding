@@ -14,6 +14,10 @@
 // import general main theme
 @import '../../main';
 
+// global
+@import 'custom/components/global/buttons';
+@import 'custom/components/global/global';
+
 body {
   margin: 0;
   font-family: $font-family-regular;
@@ -31,7 +35,9 @@ body {
 @import 'custom/components/header/mini-basket';
 @import 'custom/components/header/language-switch';
 @import 'custom/components/header/main-navigation';
+// @import 'custom/components/header/refactoring_main-navigation';
 @import 'custom/components/header/sub-category-navigation';
+@import 'custom/components/header/login-form';
 
 // for main content
 @import 'custom/components/content/cms-product-list-manual';
@@ -41,6 +47,8 @@ body {
 @import 'custom/components/content/product-image';
 @import 'custom/components/content/product-name';
 @import 'custom/components/content/product-price';
+@import 'custom/components/content/product-detail-info';
+@import 'custom/components/content/filter-text';
 
 // for footer
 @import 'custom/components/footer/footer';
